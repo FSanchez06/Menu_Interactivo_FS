@@ -58,8 +58,32 @@ const leerInput = async (message) => {
     return desc;
 };
 
+const seleccionarTareas = async (tareas) => {
+    const choices = tareas.map((tarea, i) => {
+        const idx = `${i + 1}.`.green;
+        return {
+            value: tarea.id,
+            name: `${idx} ${tarea.desc}`,
+            checked: !!tarea.completadoEn
+        };
+    });
+
+    const pregunta = [
+        {
+            type: 'checkbox',
+            name: 'ids',
+            message: 'Seleccione las tareas a completar:',
+            choices
+        }
+    ];
+
+    const { ids } = await inquirer.default.prompt(pregunta);
+    return ids;
+};
+
 module.exports = {
     menu,
     pausa,
-    leerInput
+    leerInput,
+    seleccionarTareas
 };

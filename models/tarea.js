@@ -8,4 +8,4 @@ class Tarea {
     }
 }
 
-module.exports = Tarea; 
+module.exports = Tarea;

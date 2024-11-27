@@ -1,0 +1,33 @@
+Para generar un archivo .csv desde la creacion de tareas en un proyecto Node
+implica comprender el formato de los archivos .csv y como debe manejarse mediante codigo 
+JavaScript, siguiendo este proceso.
+
+1.Entender ¿Qué es un archivo .csv?
+un archivo .csv se usa para almacenar datos en formato tabular donde:
+ -Cada fila representa un registro
+ -Las columnas son separadas por signos (, ;)
+ -Los valores pueden estar entrecomillas para manejar cadenas de texto con comas.
+
+Como por ejemplo:
+
+ID,Descripción,Estado
+1,"Hacer la compra","Completada"
+2,"Lavar el coche","Pendiente"
+
+2.¿Qué herramientas existen para generar archivo .csv?
+Se puede usar:
+ -Modulos internos de Node.js como fs y path para crear el archivo de forma manual.
+ -Librerias externas como papaparse o json2csv, que simplifican la conversion de objetos JSON a CSV.
+
+3.Pasos para generar un archivo csv manualmente
+ -Paso 1: Preparar los datos
+ se deben preparar los datos dependiendo los campos e informacion a ingresar dentro de una constante.
+
+ -Paso 2: Crear el contenido csv
+ 1. Definir los encabezados del archivo dependiendo las columnas que debamos ingresar o exportar.
+ 2. Agregar cada dato como una fila en el archivo csv.
+
+ -Paso 3: Guardar el archivo csv
+ Haciendo uso del modulo fs de Node se puede almacenar el archivo csv generado.
+
+De esa forma se podria generar un archivo .csv desde un codigo Node usando las librerias locales de Node.
